@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-.env
+importante.env
 
 ### STS ###
 .apt_generated
