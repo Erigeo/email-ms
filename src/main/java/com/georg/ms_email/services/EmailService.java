@@ -26,9 +26,11 @@ public class EmailService {
 
     public void sendEmail(Email email ) {
         email.setSentDate(LocalDateTime.now());
+        email.setId(UUID.randomUUID());
+        email.setSender("capturedex@gmail.com");
         try{
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom(email.getSender());
+            message.setFrom("capturedex@gmail.com");
             message.setSubject(email.getSubject());
             message.setSentDate(email.getSentDate());
             message.setText(email.getBody());
@@ -38,6 +40,7 @@ public class EmailService {
             email.setStatusEmail(Status.SENT);
         } catch (Exception e){
             email.setStatusEmail(Status.ERROR);
+            System.err.println("Error sending email: " + e.getMessage());
         }
         finally {
             emailRepository.save(email);
@@ -54,7 +57,7 @@ public class EmailService {
     //}
 
     public Page<Email> findByReceiver(String receiver, Pageable pageable) {
-        return emailRepository.findByReceiver(receiver, (java.awt.print.Pageable) pageable);
+        return emailRepository.findByReceiver(receiver, pageable);
     }
 
     public Page<Email> findAll(Pageable pageable) {

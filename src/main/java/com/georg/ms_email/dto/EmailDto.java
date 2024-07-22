@@ -6,14 +6,13 @@ public class EmailDto {
 
     private String subject;
     private String body;
-    private String sender;
     private String receiver;
 
 
-    public EmailDto(String subject, String body, String sender, String receiver) {
+    public EmailDto(String subject, String body, String receiver) {
         this.subject = subject;
         this.body = body;
-        this.sender = sender;
+
         this.receiver = receiver;
     }
 
@@ -33,13 +32,7 @@ public class EmailDto {
         this.body = body;
     }
 
-    public String getSender() {
-        return sender;
-    }
 
-    public void setSender(String sender) {
-        this.sender = sender;
-    }
 
     public String getReceiver() {
         return receiver;

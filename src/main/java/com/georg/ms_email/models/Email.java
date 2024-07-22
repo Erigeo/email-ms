@@ -4,7 +4,6 @@ import com.georg.ms_email.enums.Status;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.UUID;
@@ -19,14 +18,14 @@ public class Email {
     private String body;
     private String sender;
     private String receiver;
-    private LocalDate sentDate;
+    private Date sentDate;
     private Status statusEmail;
 
     public Email(){
 
     }
 
-    public Email(UUID id, String subject, String body, String sender, String receiver, LocalDate sentDate, Status statusEmail) {
+    public Email(UUID id, String subject, String body, String sender, String receiver, Date sentDate, Status statusEmail) {
         this.id = id;
         this.subject = subject;
         this.body = body;
@@ -80,7 +79,7 @@ public class Email {
         return sentDate;
     }
 
-    public void setSentDate(LocalDateTime sentDate) {
+    public void setSentDate(Date sentDate) {
         this.sentDate = sentDate;
     }
 
@@ -90,5 +89,8 @@ public class Email {
 
     public void setStatusEmail(Status statusEmail) {
         this.statusEmail = statusEmail;
+    }
+
+    public void setSentDate(LocalDateTime now) {
     }
 }
