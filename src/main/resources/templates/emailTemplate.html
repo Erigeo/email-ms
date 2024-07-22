@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Email Template</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'VT323', monospace; /* Aplica a fonte VT323 ao corpo do email */
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #c94b4b;
+            padding: 20px;
+            font-size: 24px;
+            color: #fff;
+            position: relative;
+            width: 100%;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            box-sizing: border-box;
+        }
+        .header h1 {
+            margin: 0;
+            text-align: center;
+        }
+
+        .content {
+            padding: 20px;
+            font-size: 26px;
+            text-align: center;
+            background: #7eb2dd;
+            color: #fff;
+        }
+        .footer {
+            background-color: #c94b4b;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+</div>
+<div class="header">
+    <h1 th:text="${subject}">Testeeee Wello!</h1>
+
+</div>
+<div class="content">
+    <p th:text="${body}">Email body content here...</p>
+    <img src="https://archives.bulbagarden.net/media/upload/thumb/1/10/0479Rotom-Pok%C3%A9dex.png/220px-0479Rotom-Pok%C3%A9dex.png" alt="rottom image">
+</div>
+<div class="footer">
+    <p>© 2024 CaptureDex</p>
+</div>
+</body>
+</html>

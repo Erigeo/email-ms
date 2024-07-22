@@ -18,14 +18,15 @@ public class Email {
     private String body;
     private String sender;
     private String receiver;
-    private Date sentDate;
+    private LocalDateTime sentDate;
     private Status statusEmail;
+
 
     public Email(){
 
     }
 
-    public Email(UUID id, String subject, String body, String sender, String receiver, Date sentDate, Status statusEmail) {
+    public Email(UUID id, String subject, String body, String sender, String receiver, LocalDateTime sentDate, Status statusEmail) {
         this.id = id;
         this.subject = subject;
         this.body = body;
@@ -75,11 +76,11 @@ public class Email {
         this.receiver = receiver;
     }
 
-    public Date getSentDate() {
+    public LocalDateTime getSentDate() {
         return sentDate;
     }
 
-    public void setSentDate(Date sentDate) {
+    public void setSentDate(LocalDateTime sentDate) {
         this.sentDate = sentDate;
     }
 
@@ -91,6 +92,4 @@ public class Email {
         this.statusEmail = statusEmail;
     }
 
-    public void setSentDate(LocalDateTime now) {
-    }
 }

@@ -9,6 +9,7 @@ public class EmailDto {
     private String receiver;
 
 
+
     public EmailDto(String subject, String body, String receiver) {
         this.subject = subject;
         this.body = body;
